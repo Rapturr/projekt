@@ -2,6 +2,22 @@
   "expo": {
     "name": "projekt",
     "slug": "projekt",
+    "platforms": ["ios", "android"],
+    "ios": {
+      "bundleIdentifier": "com.myapp",
+      "infoPlist": {
+        "NSContactsUsageDescription": "This app needs access to your contacts.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photos.",
+        "NSCameraUsageDescription": "This app needs access to your camera."
+      }
+    },
+    "android": {
+      "permissions": [
+        "READ_CONTACTS",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ]
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -31,6 +47,12 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
       ]
     ],
